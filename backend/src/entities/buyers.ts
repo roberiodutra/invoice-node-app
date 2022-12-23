@@ -1,43 +1,46 @@
 export interface BuyersProps {
-  id: number;
   name: string;
-  tradingName: string;
-  cashforceTax: string;
-  responsibleName: string;
-  responsibleEmail: string;
-  responsiblePosition: string;
-  responsiblePhone: string;
-  responsibleMobile: string;
-  website: string;
-  postalCode: string;
-  address: string;
-  number: string;
-  complement: string;
-  neighborhood: string;
-  city: string;
-  state: string;
-  phoneNumber: string;
-  situation: string;
-  situationDate: string;
+  tradingName: string | null;
+  cashforceTax: string | null;
+  responsibleName: string | null;
+  responsibleEmail: string | null;
+  responsiblePosition: string | null;
+  responsiblePhone: string | null;
+  responsibleMobile: string | null;
+  website: string | null;
+  postalCode: string | null;
+  address: string | null;
+  number: string | null;
+  complement: string | null;
+  neighborhood: string | null;
+  city: string | null;
+  state: string | null;
+  phoneNumber: string | null;
+  situation: string | null;
+  situationDate: string | null;
   createdAt: Date;
   updatedAt: Date;
-  cnpjId: number;
+  cnpjId: number | null;
   confirm: number;
-  email: string;
+  email: string | null;
 }
 
 export class Buyers {
-  private props: BuyersProps;
-
-  constructor(props: BuyersProps) {
-    this.props = props;
-  }
-
-  get id () {
-    return this.props.id;
-  }
+  constructor(private props: BuyersProps) {}
 
   get name () {
     return this.props.name;
+  }
+
+  get createdAt () {
+    return this.props.createdAt;
+  }
+
+  get updatedAt () {
+    return this.props.updatedAt;
+  }
+
+  get confirm () {
+    return this.props.confirm;
   }
 }
