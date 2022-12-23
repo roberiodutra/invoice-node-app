@@ -10,7 +10,7 @@ describe('Buyers entity', () => {
     expect(sut.email).toBe(makeBuyer().email);
   });
 
-  it('updated date cannot be less than the creation date', () => {
+  it('updated date cannot be less than creation date', () => {
     const updatedAt = new Date();
 
     updatedAt.setDate(updatedAt.getDate() + 1);
@@ -20,5 +20,15 @@ describe('Buyers entity', () => {
     }))
 
     expect(sut.updatedAt >= sut.createdAt).toBeTruthy();
+  });
+
+  it('should throw an error', () => {
+    const updatedAt = new Date();
+
+    updatedAt.setDate(updatedAt.getDate() - 1);
+
+    expect(() => {
+      return new Buyer(makeBuyer({ updatedAt }));
+    }).toThrow();
   });
 })

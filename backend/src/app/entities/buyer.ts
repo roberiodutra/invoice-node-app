@@ -26,21 +26,27 @@ export interface BuyerProps {
 }
 
 export class Buyer {
-  constructor(private props: BuyerProps) {}
+  constructor(private props: BuyerProps) {
+    const { createdAt, updatedAt } = props;
 
-  get name () {
+    if (updatedAt < createdAt) {
+      throw new Error('Invalid updated date');
+    }
+  }
+
+  get name() {
     return this.props.name;
   }
 
-  get email () {
+  get email() {
     return this.props.email;
   }
 
-  get createdAt () {
+  get createdAt() {
     return this.props.createdAt;
   }
 
-  get updatedAt () {
+  get updatedAt() {
     return this.props.updatedAt;
   }
 }
