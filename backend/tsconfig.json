@@ -1,17 +1,34 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "commonjs",
+    "module": "esnext",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "removeComments": true,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
     "sourceMap": true,
+    "noImplicitAny": true,
     "outDir": "./dist",
     "rootDir": "/",
     "moduleResolution": "node",
     "baseUrl": ".",
+    "paths": {
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@helpers/*": [
+        "./src/helpers/*"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
+      ],
+      "@tests/*": [
+        "./src/tests/*"
+      ]
+    }
   }
 }
