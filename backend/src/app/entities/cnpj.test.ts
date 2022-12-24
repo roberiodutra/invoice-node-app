@@ -7,7 +7,7 @@ describe('Cnpj entity', () => {
 
     expect(sut).toBeInstanceOf(Cnpj);
     expect(sut.cnpj.value).toBe(makeCnpj().cnpj.value);
-    expect(sut.companyType).toBe(makeCnpj().companyType);
+    expect(sut.companyType.value).toBe(makeCnpj().companyType.value);
   });
 
   it('updated date cannot be less than creation date', () => {

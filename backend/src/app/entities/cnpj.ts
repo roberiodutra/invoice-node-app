@@ -1,8 +1,9 @@
+import { CnpjCompanyType } from '@app/types/cnpj/cnpj-companyType';
 import { CnpjValue } from '@app/types/cnpj/cnpj-value';
 
 export interface CnpjProps {
   cnpj: CnpjValue;
-  companyType: string;
+  companyType: CnpjCompanyType;
   createdAt: Date;
   updatedAt: Date;
 }
