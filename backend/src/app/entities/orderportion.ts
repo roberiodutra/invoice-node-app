@@ -8,7 +8,7 @@ export interface OrderPortionsProps {
   orderId?: number;
 }
 
-export class Buyer {
+export class OrderPortion {
   constructor(private props: OrderPortionsProps) {}
 
   public get nDup() {

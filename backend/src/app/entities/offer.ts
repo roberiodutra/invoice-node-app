@@ -13,7 +13,7 @@ export interface OfferProps {
   sponsorId?: number;
 }
 
-export class Buyer {
+export class Offer {
   constructor(private props: OfferProps) {}
 
   public get tax() {
