@@ -4,6 +4,7 @@ export enum ErrorTypes {
   InvalidUpdatedDate = 'InvalidUpdatedDate',
   InvalidBuyerName = 'InvalidBuyerName',
   InvalidBuyerEmail = 'InvalidBuyerEmail',
+  InvalidCnpjFormat = 'InvalidCnpjFormat',
 }
 
 type ErrorResponseObject = {
@@ -27,7 +28,12 @@ export const ErrorCatalog: catalog = {
   },
 
   InvalidBuyerEmail: {
-    message: 'Buyer email must be valid example@email.com',
+    message: 'Buyer email must be valid "example@email.com"',
+    code: StatusCodes.BAD_REQUEST,
+  },
+
+  InvalidCnpjFormat: {
+    message: 'Cnpj must have a valid format',
     code: StatusCodes.BAD_REQUEST,
   },
 };

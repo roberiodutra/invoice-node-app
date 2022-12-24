@@ -7,13 +7,13 @@ export class BuyerEmail {
     return this.email;
   }
 
-  private validateEmail(email: string): boolean {
+  private emailValidate(email: string): boolean {
     const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     return emailRegex.test(email);
   }
 
   constructor(email: string) {
-    const validate = this.validateEmail(email);
+    const validate = this.emailValidate(email);
 
     if (!validate) {
       throw new Error(ErrorTypes.InvalidBuyerEmail);

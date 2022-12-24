@@ -12,9 +12,9 @@ export class BuyerName {
   }
 
   constructor(name: string) {
-    const checkLength = this.validateNameLength(name);
+    const lengthCheck = this.validateNameLength(name);
 
-    if (!checkLength) {
+    if (!lengthCheck) {
       throw new Error(ErrorTypes.InvalidBuyerName);
     }
 
