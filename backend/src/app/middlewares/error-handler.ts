@@ -1,7 +1,7 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { ZodError } from 'zod';
-import { ErrorCatalog, ErrorTypes } from '../helpers/ErrorCatalog';
+import { ErrorCatalog, ErrorTypes } from '../../helpers/error-catalog';
 
 const ErrorHandler: ErrorRequestHandler = (
   err: Error | ZodError,

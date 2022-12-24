@@ -3,7 +3,7 @@ import { Buyer } from './buyer';
 
 describe('Buyers entity', () => {
   it('should sign the properties correctly', () => {
-    const sut = new Buyer(makeBuyer())
+    const sut = new Buyer(makeBuyer());
 
     expect(sut).toBeInstanceOf(Buyer);
     expect(sut.name).toBe(makeBuyer().name);
@@ -15,9 +15,11 @@ describe('Buyers entity', () => {
 
     updatedAt.setDate(updatedAt.getDate() + 1);
 
-    const sut = new Buyer(makeBuyer({
-      updatedAt,
-    }))
+    const sut = new Buyer(
+      makeBuyer({
+        updatedAt,
+      })
+    );
 
     expect(sut.updatedAt >= sut.createdAt).toBeTruthy();
   });
@@ -31,4 +33,4 @@ describe('Buyers entity', () => {
       return new Buyer(makeBuyer({ updatedAt }));
     }).toThrow();
   });
-})
+});

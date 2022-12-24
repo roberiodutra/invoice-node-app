@@ -1,3 +1,5 @@
+import { ErrorTypes } from '@helpers/error-catalog';
+
 export interface BuyerProps {
   name: string;
   tradingName?: string;
@@ -30,23 +32,23 @@ export class Buyer {
     const { createdAt, updatedAt } = props;
 
     if (updatedAt < createdAt) {
-      throw new Error('Invalid updated date');
+      throw new Error(ErrorTypes.InvalidUpdatedDate);
     }
   }
 
-  get name() {
+  public get name() {
     return this.props.name;
   }
 
-  get email() {
+  public get email() {
     return this.props.email;
   }
 
-  get createdAt() {
+  public get createdAt() {
     return this.props.createdAt;
   }
 
-  get updatedAt() {
+  public get updatedAt() {
     return this.props.updatedAt;
   }
 }
