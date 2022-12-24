@@ -13,7 +13,6 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "outDir": "./dist",
-    "rootDir": "/",
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
