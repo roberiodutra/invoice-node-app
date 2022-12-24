@@ -7,12 +7,12 @@ export class BuyerName {
     return this.name;
   }
 
-  private validateNameLength(name: string): boolean {
+  private nameLengthValidate(name: string): boolean {
     return name.length >= 5;
   }
 
   constructor(name: string) {
-    const lengthCheck = this.validateNameLength(name);
+    const lengthCheck = this.nameLengthValidate(name);
 
     if (!lengthCheck) {
       throw new Error(ErrorTypes.InvalidBuyerName);

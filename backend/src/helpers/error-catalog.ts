@@ -5,6 +5,7 @@ export enum ErrorTypes {
   InvalidBuyerName = 'InvalidBuyerName',
   InvalidBuyerEmail = 'InvalidBuyerEmail',
   InvalidCnpjFormat = 'InvalidCnpjFormat',
+  InvalidCnpjCompanyType = 'InvalidCnpjCompanyType',
 }
 
 type ErrorResponseObject = {
@@ -34,6 +35,11 @@ export const ErrorCatalog: catalog = {
 
   InvalidCnpjFormat: {
     message: 'Cnpj must have a valid format',
+    code: StatusCodes.BAD_REQUEST,
+  },
+
+  InvalidCnpjCompanyType: {
+    message: 'CompanyType must have a value between 1 and 10',
     code: StatusCodes.BAD_REQUEST,
   },
 };
