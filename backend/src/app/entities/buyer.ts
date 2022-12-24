@@ -1,7 +1,8 @@
+import { BuyerName } from '@app/types/buyer/buyer-name';
 import { ErrorTypes } from '@helpers/error-catalog';
 
 export interface BuyerProps {
-  name: string;
+  name: BuyerName;
   tradingName?: string;
   cashforceTax?: string;
   responsibleName?: string;

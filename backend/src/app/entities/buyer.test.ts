@@ -6,7 +6,7 @@ describe('Buyers entity', () => {
     const sut = new Buyer(makeBuyer());
 
     expect(sut).toBeInstanceOf(Buyer);
-    expect(sut.name).toBe(makeBuyer().name);
+    expect(sut.name.value).toBe(makeBuyer().name.value);
     expect(sut.email).toBe(makeBuyer().email);
   });
 

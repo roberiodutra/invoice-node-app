@@ -1,19 +1,13 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { ZodError } from 'zod';
 import { ErrorCatalog, ErrorTypes } from '../../helpers/error-catalog';
 
 const ErrorHandler: ErrorRequestHandler = (
-  err: Error | ZodError,
+  err: Error,
   _req: Request,
   res: Response,
   _next: NextFunction
 ) => {
-  if (err instanceof ZodError) {
-    const response = err.issues.map((z) => z.message);
-    return res.status(StatusCodes.BAD_REQUEST).json({ message: response });
-  }
-
   const messageAsErrorType = err.message as keyof typeof ErrorTypes;
   const mappedError = ErrorCatalog[messageAsErrorType];
 
