@@ -6,7 +6,7 @@ describe('Cnpj entity', () => {
     const sut = new Cnpj(makeCnpj());
 
     expect(sut).toBeInstanceOf(Cnpj);
-    expect(sut.cnpj).toBe(makeCnpj().cnpj);
+    expect(sut.cnpj.value).toBe(makeCnpj().cnpj.value);
     expect(sut.companyType).toBe(makeCnpj().companyType);
   });
 
