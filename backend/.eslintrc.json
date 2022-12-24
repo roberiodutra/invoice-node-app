@@ -1,7 +1,9 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -17,6 +19,11 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "no-useless-constructor": "off"
+    "semi": [
+      2,
+      "always"
+    ],
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }
