@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 export enum ErrorTypes {
   InvalidUpdatedDate = 'InvalidUpdatedDate',
   InvalidBuyerName = 'InvalidBuyerName',
+  InvalidBuyerEmail = 'InvalidBuyerEmail',
 }
 
 type ErrorResponseObject = {
@@ -22,6 +23,11 @@ export const ErrorCatalog: catalog = {
 
   InvalidBuyerName: {
     message: 'Buyer name must be at least 5 characters long',
+    code: StatusCodes.BAD_REQUEST,
+  },
+
+  InvalidBuyerEmail: {
+    message: 'Buyer email must be valid example@email.com',
     code: StatusCodes.BAD_REQUEST,
   },
 };

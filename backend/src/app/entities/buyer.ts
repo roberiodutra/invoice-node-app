@@ -1,3 +1,4 @@
+import { BuyerEmail } from '@app/types/buyer/buyer-email';
 import { BuyerName } from '@app/types/buyer/buyer-name';
 import { ErrorTypes } from '@helpers/error-catalog';
 
@@ -25,7 +26,7 @@ export interface BuyerProps {
   updatedAt: Date;
   cnpjId?: number;
   confirm?: number;
-  email: string;
+  email: BuyerEmail;
 }
 
 export class Buyer {

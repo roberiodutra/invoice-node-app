@@ -7,7 +7,7 @@ describe('Buyers entity', () => {
 
     expect(sut).toBeInstanceOf(Buyer);
     expect(sut.name.value).toBe(makeBuyer().name.value);
-    expect(sut.email).toBe(makeBuyer().email);
+    expect(sut.email.value).toBe(makeBuyer().email.value);
   });
 
   it('updated date cannot be less than creation date', () => {
