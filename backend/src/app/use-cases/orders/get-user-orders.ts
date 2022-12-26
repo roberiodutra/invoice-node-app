@@ -1,13 +1,12 @@
 import { Order } from '@app/entities/order';
 import { OrderRepository } from '@app/repositories/order-repository';
-import { ErrorTypes } from '@helpers/error-catalog';
 
 interface Request {
-  userId: number;
+  userId?: number;
 }
 
 interface Response {
-  orders: Order;
+  orders: Order[];
 }
 
 export class GetUserOrders {
@@ -17,10 +16,6 @@ export class GetUserOrders {
     const { userId } = request;
 
     const orders = await this.orderRepository.findByUserId(userId);
-
-    if (!orders) {
-      throw new Error(ErrorTypes.UserNotFound);
-    }
 
     return { orders };
   }
