@@ -6,6 +6,7 @@ export enum ErrorTypes {
   InvalidBuyerEmail = 'InvalidBuyerEmail',
   InvalidCnpjFormat = 'InvalidCnpjFormat',
   InvalidCnpjCompanyType = 'InvalidCnpjCompanyType',
+  UserNotFound = 'UserNotFound',
 }
 
 type ErrorResponseObject = {
@@ -41,5 +42,10 @@ export const ErrorCatalog: catalog = {
   InvalidCnpjCompanyType: {
     message: 'CompanyType must have a value between 1 and 10',
     code: StatusCodes.BAD_REQUEST,
+  },
+
+  UserNotFound: {
+    message: 'User Not Found',
+    code: StatusCodes.NOT_FOUND,
   },
 };
