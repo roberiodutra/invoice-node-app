@@ -14,4 +14,8 @@ export class InMemoryUserRepository implements UserRepository {
 
     return user;
   }
+
+  async create(user: User) {
+    this.user.push(user);
+  }
 }
