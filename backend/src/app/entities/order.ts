@@ -46,6 +46,10 @@ export class Order {
     return this.props.updatedAt;
   }
 
+  public get userId() {
+    return this.props.userId;
+  }
+
   public get orderStatusBuyer() {
     return this.props.orderStatusBuyer;
   }
