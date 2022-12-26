@@ -1,4 +1,4 @@
-import { DATE, INTEGER, Model, STRING } from 'sequelize';
+import { DATE, INTEGER, Model, STRING, TINYINT } from 'sequelize';
 import db from '.';
 
 export default class User extends Model {
@@ -51,8 +51,9 @@ User.init(
       defaultValue: null,
     },
     emailChecked: {
-      type: INTEGER,
+      type: TINYINT,
       allowNull: false,
+      defaultValue: 0,
     },
     createdAt: {
       type: DATE,
@@ -63,8 +64,9 @@ User.init(
       allowNull: false,
     },
     cashforceAdm: {
-      type: INTEGER,
+      type: TINYINT,
       allowNull: false,
+      defaultValue: 0,
     },
   },
   {

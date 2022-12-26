@@ -1,5 +1,6 @@
 import { User } from '@app/entities/user';
 import { UserRepository } from '@app/repositories/user-repository';
+import { ErrorTypes } from '@helpers/error-catalog';
 
 interface Request {
   email: string;
@@ -16,6 +17,10 @@ export class GetUser {
     const { email } = request;
 
     const user = await this.userRepository.findByEmail(email);
+
+    if (!user) {
+      throw new Error(ErrorTypes.UserNotFound);
+    }
 
     return { user };
   }
