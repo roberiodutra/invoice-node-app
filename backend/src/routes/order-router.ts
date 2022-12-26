@@ -9,6 +9,6 @@ const orderRepository = new SequelizeOrderRepository();
 const getUserOrders = new GetUserOrders(orderRepository);
 const controller = new OrderController(getUserOrders);
 
-route.get('/', controller.findByUserId);
+route.post('/', controller.findByUserId);
 
 export default route;

@@ -9,11 +9,7 @@ export class SequelizeOrderRepository implements OrderRepository {
     const orders = await this.model.findAll({
       where: { userId },
     });
-    console.log(
-      '🚀 ~ SequelizeOrderRepository ~ findByUserId ~ orders',
-      orders
-    );
 
-    return orders;
+    return orders as [];
   }
 }
