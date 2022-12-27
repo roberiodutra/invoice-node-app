@@ -1,5 +1,6 @@
 import { DATE, INTEGER, Model, STRING, TINYINT } from 'sequelize';
 import db from '.';
+import Cnpj from './Cnpj';
 
 export default class Buyer extends Model {
   declare id: number;
@@ -160,3 +161,5 @@ Buyer.init(
     timestamps: false,
   }
 );
+
+Buyer.hasMany(Cnpj, { foreignKey: 'cnpjId' });

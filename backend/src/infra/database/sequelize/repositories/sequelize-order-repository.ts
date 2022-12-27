@@ -8,6 +8,7 @@ export class SequelizeOrderRepository implements OrderRepository {
   async findByUserId(userId: number): Promise<Order[]> {
     const orders = await this.model.findAll({
       where: { userId },
+      include: { all: true },
     });
 
     return orders as [];

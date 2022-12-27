@@ -1,5 +1,6 @@
 import { DATE, INTEGER, Model, STRING } from 'sequelize';
 import db from '.';
+import Cnpj from './Cnpj';
 
 export default class Sponsor extends Model {
   declare id: number;
@@ -178,3 +179,5 @@ Sponsor.init(
     timestamps: false,
   }
 );
+
+Sponsor.hasOne(Cnpj, { foreignKey: 'cnpjId' });

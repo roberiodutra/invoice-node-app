@@ -1,5 +1,6 @@
 import { DATE, INTEGER, Model, STRING, TINYINT } from 'sequelize';
 import db from '.';
+import Order from './Order';
 
 export default class Offer extends Model {
   declare id: number;
@@ -81,3 +82,5 @@ Offer.init(
     timestamps: false,
   }
 );
+
+Offer.hasOne(Order, { foreignKey: 'orderId' });

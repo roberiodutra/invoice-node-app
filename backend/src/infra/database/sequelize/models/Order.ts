@@ -1,5 +1,9 @@
 import { DATE, INTEGER, Model, STRING } from 'sequelize';
 import db from '.';
+import Buyer from './Buyer';
+import Cnpj from './Cnpj';
+import Provider from './Provider';
+import User from './User';
 
 export default class Order extends Model {
   declare id: number;
@@ -147,3 +151,10 @@ Order.init(
     timestamps: false,
   }
 );
+
+Order.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Order);
+
+Order.belongsTo(Cnpj, { foreignKey: 'cnpjId' });
+Order.belongsTo(Buyer, { foreignKey: 'buyerId' });
+Order.belongsTo(Provider, { foreignKey: 'providerId' });

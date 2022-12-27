@@ -8,6 +8,7 @@ export class SequelizeUserRepository implements UserRepository {
   async findByEmail(email: string): Promise<User | null> {
     const user = await this.model.findOne({
       where: { email },
+      include: { all: true },
     });
 
     if (!user) {

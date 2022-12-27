@@ -1,5 +1,6 @@
 import { DATE, INTEGER, Model, STRING } from 'sequelize';
 import db from '.';
+import Cnpj from './Cnpj';
 
 export default class Provider extends Model {
   declare id: number;
@@ -178,3 +179,5 @@ Provider.init(
     timestamps: false,
   }
 );
+
+Provider.hasOne(Cnpj, { foreignKey: 'cnpjId' });

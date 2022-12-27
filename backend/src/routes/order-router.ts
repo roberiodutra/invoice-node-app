@@ -5,6 +5,7 @@ import { Router } from 'express';
 
 const route = Router();
 
+// Dependency injection
 const orderRepository = new SequelizeOrderRepository();
 const getUserOrders = new GetUserOrders(orderRepository);
 const controller = new OrderController(getUserOrders);
