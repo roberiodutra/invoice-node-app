@@ -154,6 +154,8 @@ Order.init(
 
 Order.belongsTo(User, { foreignKey: 'userId' });
 User.hasMany(Order);
+Provider.belongsTo(Cnpj);
+Provider.hasMany(Order);
 
 Order.belongsTo(Cnpj, { foreignKey: 'cnpjId' });
 Order.belongsTo(Buyer, { foreignKey: 'buyerId' });

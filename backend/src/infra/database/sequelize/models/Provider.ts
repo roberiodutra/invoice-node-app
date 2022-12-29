@@ -178,5 +178,3 @@ Provider.init(
     timestamps: false,
   }
 );
-
-// Provider.hasOne(Cnpj, { foreignKey: 'cnpjId' });
