@@ -50,6 +50,10 @@ export class Order {
     return this.props.userId;
   }
 
+  public get value() {
+    return this.props.value;
+  }
+
   public get orderStatusBuyer() {
     return this.props.orderStatusBuyer;
   }
