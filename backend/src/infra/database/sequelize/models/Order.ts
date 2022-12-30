@@ -152,11 +152,14 @@ Order.init(
   }
 );
 
+//-- Associations -->
+
 Order.belongsTo(User, { foreignKey: 'userId' });
 User.hasMany(Order);
+
+Order.belongsTo(Provider, { foreignKey: 'providerId' });
 Provider.belongsTo(Cnpj);
 Provider.hasMany(Order);
 
 Order.belongsTo(Cnpj, { foreignKey: 'cnpjId' });
 Order.belongsTo(Buyer, { foreignKey: 'buyerId' });
-Order.belongsTo(Provider, { foreignKey: 'providerId' });
