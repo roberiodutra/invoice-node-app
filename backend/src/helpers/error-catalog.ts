@@ -7,6 +7,7 @@ export enum ErrorTypes {
   InvalidCnpjFormat = 'InvalidCnpjFormat',
   InvalidCnpjCompanyType = 'InvalidCnpjCompanyType',
   InvalidOrderNumber = 'InvalidOrderNumber',
+  InvalidOrderValue = 'InvalidOrderValue',
   UserNotFound = 'UserNotFound',
 }
 
@@ -52,6 +53,11 @@ export const ErrorCatalog: catalog = {
 
   InvalidOrderNumber: {
     message: 'Order number is required',
+    code: StatusCodes.BAD_REQUEST,
+  },
+
+  InvalidOrderValue: {
+    message: 'Order value needs to be greater than zero',
     code: StatusCodes.BAD_REQUEST,
   },
 };
