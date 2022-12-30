@@ -6,6 +6,7 @@ export enum ErrorTypes {
   InvalidBuyerEmail = 'InvalidBuyerEmail',
   InvalidCnpjFormat = 'InvalidCnpjFormat',
   InvalidCnpjCompanyType = 'InvalidCnpjCompanyType',
+  InvalidOrderNumber = 'InvalidOrderNumber',
   UserNotFound = 'UserNotFound',
 }
 
@@ -47,5 +48,10 @@ export const ErrorCatalog: catalog = {
   UserNotFound: {
     message: 'User Not Found',
     code: StatusCodes.NOT_FOUND,
+  },
+
+  InvalidOrderNumber: {
+    message: 'Order number is required',
+    code: StatusCodes.BAD_REQUEST,
   },
 };
