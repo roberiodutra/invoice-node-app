@@ -1,0 +1,38 @@
+@use "sass:map";
+
+* {
+	box-sizing: border-box;
+	font-family: 'DM Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: $bg-color;
+}
+
+button {
+	cursor: pointer;
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+.app {
+	display: flex;
+	main {
+		flex: 1 1 0;
+		padding: 2rem;
+
+		@media (max-width: 1024px) {
+			padding-left: 6rem;
+		}
+	}
+}
+
+@import "variables";
+@import "components/sidebar";
+@import "components/header";
+@import "pages/orders";
+@import "pages/dashboard";
