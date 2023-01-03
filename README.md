@@ -7,10 +7,6 @@
 
 <p align="center">APP made with JS, TS, Node, Vuejs and MySql 🤓</p>
 
-<p align="center">
-  <img src="https://img.shields.io/conda/l/conda-forge/setuptools?color=036b52&logo=ghost&logoColor=036b52">
-</p>
-
 <br>
 
 <h2 align="center">
