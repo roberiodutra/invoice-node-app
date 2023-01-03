@@ -9,6 +9,7 @@ export enum ErrorTypes {
   InvalidOrderNumber = 'InvalidOrderNumber',
   InvalidOrderValue = 'InvalidOrderValue',
   UserNotFound = 'UserNotFound',
+  InvalidUserName = 'InvalidUserName',
 }
 
 type ErrorResponseObject = {
@@ -58,6 +59,11 @@ export const ErrorCatalog: catalog = {
 
   InvalidOrderValue: {
     message: 'Order value needs to be greater than zero',
+    code: StatusCodes.BAD_REQUEST,
+  },
+
+  InvalidUserName: {
+    message: 'User name must be at least 3 characters long',
     code: StatusCodes.BAD_REQUEST,
   },
 };
