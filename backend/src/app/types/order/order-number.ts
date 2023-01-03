@@ -7,12 +7,12 @@ export class OrderNumber {
     return this.orderNumber;
   }
 
-  private orderNumberLengthValidate(orderNumber: string): boolean {
-    return orderNumber.length >= 1;
+  private orderNumberLengthValidate(orderNumber: number): boolean {
+    return orderNumber >= 1;
   }
 
   constructor(orderNumber: string) {
-    const lengthCheck = this.orderNumberLengthValidate(orderNumber);
+    const lengthCheck = this.orderNumberLengthValidate(+orderNumber);
 
     if (!lengthCheck) {
       throw new Error(ErrorTypes.InvalidOrderNumber);
